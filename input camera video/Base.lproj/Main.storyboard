@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="input_camera_video" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,97 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0di-fj-dYt">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBr-Nj-cwR">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ieJ-Vg-MIM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yv-Fr-HqJ">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Switch"/>
+                                        <connections>
+                                            <action selector="switchCameraSide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1OX-sR-a7W"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7yv-Fr-HqJ" secondAttribute="trailing" constant="7" id="0gB-Mc-0v7"/>
+                                    <constraint firstItem="RBr-Nj-cwR" firstAttribute="centerX" secondItem="0di-fj-dYt" secondAttribute="centerX" id="5SV-nF-aR0"/>
+                                    <constraint firstItem="RBr-Nj-cwR" firstAttribute="bottom" secondItem="0di-fj-dYt" secondAttribute="bottomMargin" id="HkP-aT-kDF"/>
+                                    <constraint firstItem="7yv-Fr-HqJ" firstAttribute="top" secondItem="0di-fj-dYt" secondAttribute="top" constant="34" id="t2o-De-z0l"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="RBr-Nj-cwR"/>
+                                        <exclude reference="7yv-Fr-HqJ"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="0gB-Mc-0v7"/>
+                                        <exclude reference="t2o-De-z0l"/>
+                                        <exclude reference="5SV-nF-aR0"/>
+                                        <exclude reference="HkP-aT-kDF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="RBr-Nj-cwR"/>
+                                        <include reference="7yv-Fr-HqJ"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="0gB-Mc-0v7"/>
+                                        <include reference="t2o-De-z0l"/>
+                                        <include reference="5SV-nF-aR0"/>
+                                        <include reference="HkP-aT-kDF"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0di-fj-dYt" secondAttribute="trailing" id="7Wm-i2-JDF"/>
+                            <constraint firstItem="0di-fj-dYt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JUu-AK-X5q"/>
+                            <constraint firstItem="0di-fj-dYt" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="KnH-F6-dyV"/>
+                            <constraint firstItem="0di-fj-dYt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zug-jR-V66"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="0di-fj-dYt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7Wm-i2-JDF"/>
+                                <exclude reference="JUu-AK-X5q"/>
+                                <exclude reference="KnH-F6-dyV"/>
+                                <exclude reference="Zug-jR-V66"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="0di-fj-dYt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7Wm-i2-JDF"/>
+                                <include reference="JUu-AK-X5q"/>
+                                <include reference="KnH-F6-dyV"/>
+                                <include reference="Zug-jR-V66"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="0di-fj-dYt" id="NUx-Av-633"/>
+                        <outlet property="startButton" destination="RBr-Nj-cwR" id="ZSO-KT-cJV"/>
+                        <outlet property="switchCameraButton" destination="7yv-Fr-HqJ" id="vbD-kR-el1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304.5" y="429"/>
         </scene>
     </scenes>
 </document>
