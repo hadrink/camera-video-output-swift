@@ -122,9 +122,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         isStart = isStart == nil ? false : isStart
         
         if !isStart! {
+            isStart = true
             addVideoOutput()
             startButton.setTitle("Stop", forState: .Normal)
         } else {
+            isStart = false
             stopVideoOutput()
             startButton.setTitle("Start", forState: .Normal)
         }
